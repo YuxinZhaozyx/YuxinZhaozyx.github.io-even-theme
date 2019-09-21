@@ -9,6 +9,41 @@
   </url>
   
   <url>
+    <loc>http://YuxinZhaozyx.github.io/tags/latex/</loc>
+    <lastmod>2019-09-21T19:47:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/post/latex-notations/</loc>
+    <lastmod>2019-09-21T19:47:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/post/</loc>
+    <lastmod>2019-09-21T19:47:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/tags/</loc>
+    <lastmod>2019-09-21T19:47:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/</loc>
+    <lastmod>2019-09-21T19:47:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://YuxinZhaozyx.github.io/categories/</loc>
     <lastmod>2019-09-21T15:38:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -23,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://YuxinZhaozyx.github.io/post/</loc>
-    <lastmod>2019-09-21T15:38:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://YuxinZhaozyx.github.io/post/example/js-sequence-diagrams/</loc>
     <lastmod>2019-09-21T15:38:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,20 +66,6 @@
   
   <url>
     <loc>http://YuxinZhaozyx.github.io/tags/sequence-diagrams/</loc>
-    <lastmod>2019-09-21T15:38:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://YuxinZhaozyx.github.io/tags/</loc>
-    <lastmod>2019-09-21T15:38:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://YuxinZhaozyx.github.io/</loc>
     <lastmod>2019-09-21T15:38:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

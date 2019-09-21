@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Yuxin Zhao</copyright>
-    <lastBuildDate>Sat, 21 Sep 2019 15:38:45 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Sep 2019 19:47:59 +0800</lastBuildDate>
     
 	<atom:link href="http://YuxinZhaozyx.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>latex</title>
+      <link>http://YuxinZhaozyx.github.io/tags/latex/</link>
+      <pubDate>Sat, 21 Sep 2019 19:47:59 +0800</pubDate>
+      
+      <guid>http://YuxinZhaozyx.github.io/tags/latex/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>sequence-diagrams</title>

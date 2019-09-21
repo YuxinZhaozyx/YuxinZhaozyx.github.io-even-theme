@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Yuxin Zhao</copyright>
-    <lastBuildDate>Sat, 21 Sep 2019 15:38:45 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Sep 2019 19:47:59 +0800</lastBuildDate>
     
 	<atom:link href="http://YuxinZhaozyx.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LaTeX Notations</title>
+      <link>http://YuxinZhaozyx.github.io/post/latex-notations/</link>
+      <pubDate>Sat, 21 Sep 2019 19:47:59 +0800</pubDate>
+      
+      <guid>http://YuxinZhaozyx.github.io/post/latex-notations/</guid>
+      <description>&lt;p&gt;本文将介绍LaTeX的常用命令符号，以备需要时查询。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Sequence Diagrams</title>
