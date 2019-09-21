@@ -1656,7 +1656,23 @@ $$
     </footer>
   </article>
         </div>
-        
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2019-09-21 14:33:47 \x2b0800 CST',
+        title: 'Theme Example',
+        clientID: 'ec5806c0144b70a1b32e',
+        clientSecret: 'aadae41a3747ffa5b36fd0e13c7e84026db07e0c',
+        repo: 'YuxinZhaozyx.github.io',
+        owner: 'YuxinZhaozyx',
+        admin: ['YuxinZhaozyx'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
 
   
 
