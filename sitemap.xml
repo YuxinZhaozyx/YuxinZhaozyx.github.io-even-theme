@@ -1,0 +1,116 @@
+<?xml-stylesheet type="text/xsl" href="http://YuxinZhaozyx.github.io/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/about/</loc>
+    <lastmod>2017-08-28T21:41:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/categories/</loc>
+    <lastmod>2019-09-21T15:38:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/categories/example/</loc>
+    <lastmod>2019-09-21T15:38:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/post/</loc>
+    <lastmod>2019-09-21T15:38:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/post/example/js-sequence-diagrams/</loc>
+    <lastmod>2019-09-21T15:38:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/tags/sequence-diagrams/</loc>
+    <lastmod>2019-09-21T15:38:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/tags/</loc>
+    <lastmod>2019-09-21T15:38:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/</loc>
+    <lastmod>2019-09-21T15:38:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/post/example/js-flowchart-diagrams/</loc>
+    <lastmod>2019-09-21T15:38:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/tags/flowchart-diagrams/</loc>
+    <lastmod>2019-09-21T15:38:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/tags/highlight/</loc>
+    <lastmod>2019-09-21T15:31:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/post/example/syntax-highlighting/</loc>
+    <lastmod>2019-09-21T15:31:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/tags/even/</loc>
+    <lastmod>2019-09-21T14:33:47+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/post/example/theme-example/</loc>
+    <lastmod>2019-09-21T14:33:47+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/tags/shortcode/</loc>
+    <lastmod>2019-09-21T13:58:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://YuxinZhaozyx.github.io/post/example/shortcodes/</loc>
+    <lastmod>2019-09-21T13:58:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>
