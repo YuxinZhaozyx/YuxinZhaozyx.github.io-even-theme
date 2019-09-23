@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Yuxin Zhao</copyright>
-    <lastBuildDate>Sat, 21 Sep 2019 19:47:59 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2019 19:57:29 +0800</lastBuildDate>
     
 	<atom:link href="http://YuxinZhaozyx.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>大整数乘法</title>
+      <link>http://YuxinZhaozyx.github.io/post/big-number/</link>
+      <pubDate>Mon, 23 Sep 2019 19:57:29 +0800</pubDate>
+      
+      <guid>http://YuxinZhaozyx.github.io/post/big-number/</guid>
+      <description>&lt;p&gt;通常两个n位十进制整数相乘 (如果两个数位数不同则在位数少的数字前填0至位数相同)，第一个数中的n个数字都分别要与第二个数中的n个数字相乘，这样一共就要做 $n^2$ 次位乘，因此时间复杂度为 $\Theta(n^2)$。本文介绍如何优化乘法的时间复杂度。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>LaTeX Notations</title>
