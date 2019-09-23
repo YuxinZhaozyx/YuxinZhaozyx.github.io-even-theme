@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>大整数乘法 - Yuxin Zhao&#39;s blog</title>
+  <title>Strassen矩阵乘法 - Yuxin Zhao&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yuxin Zhao" /><meta name="description" content="通常两个n位十进制整数相乘 (如果两个数位数不同则在位数少的数字前填0至位数相同)，第一个数中的n个数字都分别要与第二个数中的n个数字相乘，这样一共就要做 $n^2$ 次位乘，因此时间复杂度为 $\Theta(n^2)$。本文介绍如何优化乘法的时间复杂度。
+<meta name="author" content="Yuxin Zhao" /><meta name="description" content="本文将介绍Strassen矩阵乘法，利用分治思想减少矩阵乘法所需要的计算量。
 " /><meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -27,7 +27,7 @@
 <meta name="generator" content="Hugo 0.59.0-DEV with theme even" />
 
 
-<link rel="canonical" href="http://YuxinZhaozyx.github.io/post/big-number/" />
+<link rel="canonical" href="http://YuxinZhaozyx.github.io/post/strassen-matrix-multiplication/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -42,26 +42,26 @@
 <link rel="stylesheet" href="/css/table-center.css">
 
 
-<meta property="og:title" content="大整数乘法" />
-<meta property="og:description" content="通常两个n位十进制整数相乘 (如果两个数位数不同则在位数少的数字前填0至位数相同)，第一个数中的n个数字都分别要与第二个数中的n个数字相乘，这样一共就要做 $n^2$ 次位乘，因此时间复杂度为 $\Theta(n^2)$。本文介绍如何优化乘法的时间复杂度。" />
+<meta property="og:title" content="Strassen矩阵乘法" />
+<meta property="og:description" content="本文将介绍Strassen矩阵乘法，利用分治思想减少矩阵乘法所需要的计算量。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://YuxinZhaozyx.github.io/post/big-number/" />
-<meta property="article:published_time" content="2019-09-23T19:57:29+08:00" />
-<meta property="article:modified_time" content="2019-09-23T19:57:29+08:00" />
-<meta itemprop="name" content="大整数乘法">
-<meta itemprop="description" content="通常两个n位十进制整数相乘 (如果两个数位数不同则在位数少的数字前填0至位数相同)，第一个数中的n个数字都分别要与第二个数中的n个数字相乘，这样一共就要做 $n^2$ 次位乘，因此时间复杂度为 $\Theta(n^2)$。本文介绍如何优化乘法的时间复杂度。">
+<meta property="og:url" content="http://YuxinZhaozyx.github.io/post/strassen-matrix-multiplication/" />
+<meta property="article:published_time" content="2019-09-23T22:01:20+08:00" />
+<meta property="article:modified_time" content="2019-09-23T22:01:20+08:00" />
+<meta itemprop="name" content="Strassen矩阵乘法">
+<meta itemprop="description" content="本文将介绍Strassen矩阵乘法，利用分治思想减少矩阵乘法所需要的计算量。">
 
 
-<meta itemprop="datePublished" content="2019-09-23T19:57:29&#43;08:00" />
-<meta itemprop="dateModified" content="2019-09-23T19:57:29&#43;08:00" />
-<meta itemprop="wordCount" content="797">
+<meta itemprop="datePublished" content="2019-09-23T22:01:20&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-23T22:01:20&#43;08:00" />
+<meta itemprop="wordCount" content="399">
 
 
 
 <meta itemprop="keywords" content="math," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="大整数乘法"/>
-<meta name="twitter:description" content="通常两个n位十进制整数相乘 (如果两个数位数不同则在位数少的数字前填0至位数相同)，第一个数中的n个数字都分别要与第二个数中的n个数字相乘，这样一共就要做 $n^2$ 次位乘，因此时间复杂度为 $\Theta(n^2)$。本文介绍如何优化乘法的时间复杂度。"/>
+<meta name="twitter:title" content="Strassen矩阵乘法"/>
+<meta name="twitter:description" content="本文将介绍Strassen矩阵乘法，利用分治思想减少矩阵乘法所需要的计算量。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -128,15 +128,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">大整数乘法</h1>
+      <h1 class="post-title">Strassen矩阵乘法</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2019-09-23 </span>
         <div class="post-category">
             <a href="/categories/algorithm/"> algorithm </a>
             </div>
-          <span class="more-meta"> 797 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 399 words </span>
+          <span class="more-meta"> 1 min read </span>
         
       </div>
     </header>
@@ -148,108 +148,91 @@
   </div>
 </div>
     <div class="post-content">
-      <p>通常两个n位十进制整数相乘 (如果两个数位数不同则在位数少的数字前填0至位数相同)，第一个数中的n个数字都分别要与第二个数中的n个数字相乘，这样一共就要做 $n^2$ 次位乘，因此时间复杂度为 $\Theta(n^2)$。本文介绍如何优化乘法的时间复杂度。</p>
+      <p>本文将介绍Strassen矩阵乘法，利用分治思想减少矩阵乘法所需要的计算量。</p>
 
-<p>以两个整数23和14相乘为例，这两个数字可以表示为：</p>
+<p>假定我们要求两个 $n \times n$ 矩阵 $A$ 和 $B$ 的矩阵乘法结果 $C$, 即 $C = A \times B$。</p>
 
-<div>
-$$
-23 = 2 \times 10^1 + 3 \times 10^0 \\
-14 = 1 \times 10^1 + 4 \times 10^0
-$$
-</div>
-
-<p>两者相乘为</p>
+<p>假定 $n = 2^k, k \in \mathbb{Z}^+$, 我们可以将 $A$, $B$, $C$ 划分为4个 $(n/2) \times (n/2)$ 的子矩阵。</p>
 
 <div>
 $$
 \begin{align}
-23 \times 14 & = (2 \times 10^1 + 3 \times 10^0) \times (14 = 1 \times 10^1 + 4 \times 10^0) \\
-&= (2 \times 1) \times 10^2 + (2 \times 4 + 3 \times 1) \times 10^1 + (3 \times 4) \times 10^0 \\
+\begin{bmatrix}
+C_{00} & C_{01} \\
+C_{10} & C_{11} 
+\end{bmatrix}
+&= 
+\begin{bmatrix}
+A_{00} & A_{01} \\
+A_{10} & A_{11} 
+\end{bmatrix}
+\times
+\begin{bmatrix}
+B_{00} & B_{01} \\
+B_{10} & B_{11} 
+\end{bmatrix}
+\\
+&=
+\begin{bmatrix}
+M_1 + M_4 -M_5 +M_7 & M_3 + M_5 \\
+M_2 + M_4 & M_1 + M_3 - M_2 + M_6
+\end{bmatrix}
 \end{align}
 $$
 </div>
-
-<p>这个算法跟笔算算法相同，都会进行4次位乘 ($2 \times 1$,  $2 \times 4$,  $3 \times 1$,  $3 \times 4$)，但我们可以通过重复使用 $2 \times 1$ 和 $3 \times 4$ 的计算结果，通过将中间项 $(2 \times 4 + 3 \times 1)$ 化简减少位乘的次数:</p>
-
-<div>
-$$
-2 \times 4 + 3 \times 1 = (2 + 3) \times (1 + 4) - (2 \times 1) - (3 \times 4)
-$$
-</div>
-
-<p><strong>将它一般化一点：</strong></p>
-
-<p>对于任何两位数 $a = a_1 a_0$ 和 $b = b_1 b_0$ 来说，它们的积 $c$ 可以用下列公式计算：</p>
 
 <div>
 $$
 \begin{align}
-c_2 &= a_1 \times b_1 \\
-c_0 &= a_0 \times b_0 \\
-c_1 &= (a_1 + a_0) \times (b_1 + b_0) - (c_2 + c_0) \\
-c &= a \times b = c_2 \times 10^2 + c_1 \times 10^1 + c_0
+M_1 &= (A_{00} + A_{11}) \times (B_{00}+B_{11}) \\
+M_2 &= (A_{10} + A_{11}) \times B_{00} \\
+M_3 &= A_{00} \times (B_{01} - B_{11}) \\
+M_4 &= A_{11} \times (B_{10} - B_{00}) \\
+M_5 &= (A_{00} + A_{01}) \times B_{11}) \\
+M_6 &= (A_{10} - A_{00}) \times (B_{00} + B_{01}) \\
+M_7 &= (A_{01} - A_{11}) \times (B_{10} + B_{11})
 \end{align}
 $$
 </div>
 
-<p><strong>运用递归将其更一般化：</strong></p>
+<p><strong>时间复杂度分析：</strong></p>
 
-<p>对任意n位数 $a$ 和 $b$，采用分治法将 n 位整数拆成两个 n/2 位整数，即 $ a = a_1 \times 10^{n/2} + a_0$，$ b = b_1 \times 10^{n/2} + b_0$ 。使用与前面两位数的相同方法，可得：</p>
-
-<div>
-$$
-\begin{align}
-c_2 &= a_1 \times b_1 \\
-c_0 &= a_0 \times b_0 \\
-c_1 &= (a_1 + a_0) \times (b_1 + b_0) - (c_2 + c_0) \\
-c &= a \times b = c_2 \times 10^n + c_1 \times 10^{n/2} + c_0
-\end{align}
-$$
-</div>
-
-<p>计算时 $a_1 \times b_1$ 等 n/2 位数乘法同n位乘法，递归计算下去即可。</p>
-
-<p><strong>时间复杂度计算：</strong></p>
-
-<p>因为n位数的乘法需要对n/2位数做3次乘法，乘法次数 $M(n)$ 的递推式：</p>
+<p>乘法次数 $M(n)$ :</p>
 
 <div>
 $$
-M(n) =
+M(n) = 
 \begin{cases}
-3 M(n/2), &n>1 \\
+7 M(n/2), &n>1 \\
 1, &n=1
 \end{cases}
 $$
 </div>
 
-<p>当 $n=2^k$ 时，</p>
+<p>因为 $n=2^k$,</p>
 
 <div>
 $$
-M(2^k) = 3 M(2^{k-1}) = 3 \left[ 3 M(2^{k-2}) \right] = \cdots = 3^k
+M(2^k) = 7 M(2^{k-1}) = 7 \left[ 7 M(2^{k-2}) \right] = \cdots = 7^k
 $$
 </div>
 
-<p>因为 $k=\log_2 n$ ，</p>
+<p>因为 $k= \log_2 n$,</p>
 
 <div>
 $$
-M(n) = 3^{\log_2 n} = n^{log_2 3} \approx n^{1.585}
+M(n) = 7^{\log_2 n} = n^{\log_2 7} \approx n^{2.807}
 $$
 </div>
 
-<p>以上我们只考虑了乘法次数，接下来考虑加法次数 $A(n)$：</p>
-
-<p>每次需要4次加运算和1次减运算，每个运算都有n次位运算，因此：</p>
+<p>减少的乘法次数是以额外的加减法次数为代价的，因此我们需要计算加减法次数 $A(n)$,</p>
 
 <div>
 $$
 A(n) = 
 \begin{cases}
-3 A(n/2) + 5n, &n>1 \\
-1, &n=1
+7 A(n/2) + 18 (n/2)^2 , &n>1 \\
+0, &n=1
 \end{cases}
 $$
 </div>
@@ -273,11 +256,11 @@ $$
 
 <div>
 $$
-A(n) \in \Theta(n^{\log_2 3})
+A(n) \in \Theta(n^{\log_2 7})
 $$
 </div>
 
-<p>于是算法的总时间复杂度为 $\left( M(n) + A(n) \right) \in \Theta(n^{log_2 3})$.</p>
+<p>于是算法的总时间复杂度为 $\left( M(n) + A(n) \right) \in \Theta(n^{log_2 7})$.</p>
     </div>
 
     <div class="post-copyright">
@@ -303,13 +286,9 @@ $$
           <a href="/tags/math/">math</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/strassen-matrix-multiplication/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Strassen矩阵乘法</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/latex-notations/">
-            <span class="next-text nav-default">LaTeX Notations</span>
+        
+        <a class="next" href="/post/big-number/">
+            <span class="next-text nav-default">大整数乘法</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -322,8 +301,8 @@ $$
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2019-09-23 19:57:29 \x2b0800 CST',
-        title: '大整数乘法',
+        id: '2019-09-23 22:01:20 \x2b0800 CST',
+        title: 'Strassen矩阵乘法',
         clientID: 'ec5806c0144b70a1b32e',
         clientSecret: 'aadae41a3747ffa5b36fd0e13c7e84026db07e0c',
         repo: 'YuxinZhaozyx.github.io',
